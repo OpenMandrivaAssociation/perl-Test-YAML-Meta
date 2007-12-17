@@ -16,7 +16,6 @@ BuildRequires:  perl-devel
 %endif
 BuildRequires:  perl(Test::YAML::Valid)
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 %description
 This module was written to ensure that a META.yml file, provided with a

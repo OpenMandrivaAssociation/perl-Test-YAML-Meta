@@ -1,6 +1,6 @@
 %define module  Test-YAML-Meta
 %define name    perl-%{module}
-%define version 0.10
+%define version 0.11
 %define release %mkrel 1
 
 Name:           %{name}

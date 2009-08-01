@@ -1,22 +1,22 @@
-%define module  Test-YAML-Meta
-%define name    perl-%{module}
-%define version 0.12
-%define release %mkrel 1
+%define upstream_name    Test-YAML-Meta
+%define upstream_version 0.12
 
-Name:           %{name}
-Version:        %{version}
-Release:        %{release}
-Summary:        Validation of the META.yml file in a distribution
-License:        GPL or Artistic
-Group:          Development/Perl
-Url:            http://search.cpan.org/dist/%{module}
-Source:         http://www.cpan.org/modules/by-module/Test/%{module}-%{version}.tar.gz
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
+Summary:    Validation of the META.yml file in a distribution
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:  perl-devel
 %endif
 BuildRequires:  perl(Test::YAML::Valid)
 BuildArch:      noarch
-BuildRoot:      %{_tmppath}/%{name}-%{version}
+BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module was written to ensure that a META.yml file, provided with a
@@ -25,7 +25,7 @@ being introduced to module uploads, via the use of ExtUtils::MakeMaker,
 Module::Build and Module::Install.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -46,4 +46,3 @@ rm -rf %{buildroot}
 %doc Changes README LICENSE Artistic
 %{perl_vendorlib}/Test
 %{_mandir}/*/*
-

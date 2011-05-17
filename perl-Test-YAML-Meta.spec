@@ -1,5 +1,5 @@
 %define upstream_name    Test-YAML-Meta
-%define upstream_version 0.16
+%define upstream_version 0.19
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -10,10 +10,7 @@ License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        http://search.cpan.org/dist/%{upstream_name}
 Source0:    http://www.cpan.org/modules/by-module/Test/%{upstream_name}-%{upstream_version}.tar.gz
-
-%if %{mdkversion} < 1010
-BuildRequires:  perl-devel
-%endif
+BuildRequires:  perl(Test::CPAN::Meta::YAML)
 BuildRequires:  perl(Test::YAML::Valid)
 BuildArch:      noarch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}
@@ -43,6 +40,6 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc Changes README LICENSE Artistic
+%doc Changes README LICENSE
 %{perl_vendorlib}/Test
 %{_mandir}/*/*

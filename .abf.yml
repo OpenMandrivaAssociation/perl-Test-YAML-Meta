@@ -1,2 +1,4 @@
+removed_sources:
+  Test-YAML-Meta-0.19.tar.gz: 7d6020f4fae3be2d1d4549682110b870b61b4a61
 sources:
-  "Test-YAML-Meta-0.19.tar.gz": 7d6020f4fae3be2d1d4549682110b870b61b4a61
+  Test-YAML-Meta-0.20.tar.gz: e5c8ee567314f54f18bfde17089634b4f29fa85b

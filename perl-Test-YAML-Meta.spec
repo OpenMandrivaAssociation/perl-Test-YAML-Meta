@@ -8,7 +8,7 @@ Release:	3
 Summary:	Validation of the META.yml file in a distribution
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{upstream_name}
+Url:		https://search.cpan.org/dist/%{upstream_name}
 Source0:	http://www.cpan.org/modules/by-module/Test/Test-YAML-Meta-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel

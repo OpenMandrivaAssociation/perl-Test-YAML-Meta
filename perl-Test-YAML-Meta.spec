@@ -1,15 +1,13 @@
 %define upstream_name    Test-YAML-Meta
-%define upstream_version 0.20
-
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	0.20
+Release:	4
 
 Summary:	Validation of the META.yml file in a distribution
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Test/Test-YAML-Meta-%{upstream_version}.tar.gz
+Url:		https://metacpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/Test/Test-YAML-Meta-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires:	perl-devel
@@ -24,7 +22,7 @@ being introduced to module uploads, via the use of ExtUtils::MakeMaker,
 Module::Build and Module::Install.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -65,9 +63,7 @@ make test
 
 * Sat Aug 01 2009 Jérôme Quelin <jquelin@mandriva.org> 0.120.0-1mdv2010.0
 + Revision: 405603
-- rebuild using %%perl_convert_version
-
-* Mon May 25 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.12-1mdv2010.0
+- rebuild using %0.20 Mon May 25 2009 Guillaume Rousse <guillomovitch@mandriva.org> 0.12-1mdv2010.0
 + Revision: 379578
 - update to new version 0.12
 
